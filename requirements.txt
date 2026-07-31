@@ -1,0 +1,25 @@
+--extra-index-url https://download.pytorch.org/whl/cu126
+
+# Deep Learning Frameworks
+torch>=2.1.0
+torchvision
+torchaudio
+
+# Quantization & Acceleration
+bitsandbytes
+triton
+
+# Unsloth & vLLM
+unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
+vllm>=0.6.0
+
+# API & Data Processing
+openai>=1.0.0
+datasets
+pandas
+python-dotenv
+tqdm
+
+# Statistical Analysis & Visualization 
+scipy
+matplotlib
