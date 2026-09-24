@@ -40,15 +40,14 @@ def process_single_problem(client, sample):
     target_numeric = sample["target_answer"]
 
     system_prompt = (
-        "You are an expert mathematical reasoner. Solve the problem step by step.\n\n"
-        "Do NOT repeat, paraphrase, or quote the question or input problem in your thinking process.\n"\
-        "At the very end of your response, restate the final answer with: 'The final answer is \\boxed{number}'."
+        "You are an expert mathematical reasoner. Solve the problem by showing your step-by-step derivations.\n"
+        "Conclude your final answer clearly at the end with: 'The final answer is \\boxed{number}'."
     )
 
     try:
         # Updated payload structure for DeepSeek V4 Flash
         response = client.chat.completions.create(
-            model="deepseek-v4-flash",
+            model="deepseek-flash",
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": question}
@@ -102,7 +101,7 @@ def generate_synthetic_data(limit=None, max_workers=5):
         print(f"Limit flag set: Processing first {limit} problems for testing...")
         gsm8k_data = gsm8k_data[:limit]
 
-    print(f"\nStarting generation for {len(gsm8k_data)} problems using DeepSeek-V3.2 API...")
+    print(f"\nStarting generation for {len(gsm8k_data)} problems using DeepSeek API...")
 
     validated_results = []
     stats = {"Success": 0, "Length_Filtered": 0, "Validation_Filtered": 0, "API_Error": 0}

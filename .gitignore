@@ -28,6 +28,7 @@ data/trapped/
 *.jsonl
 
 # Ignore trained LoRA adapter weights & checkpoints
+finetuned_adapters/
 adapters/
 checkpoints/
 models/
