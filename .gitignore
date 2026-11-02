@@ -22,9 +22,7 @@ venv.bak/
 # 3. Heavy ML Artifacts, Models & Datasets
 # ==========================================
 # Ignore large dataset JSONs and raw pulls
-data/raw/
-data/processed/
-data/trapped/
+data/
 *.jsonl
 
 # Ignore trained LoRA adapter weights & checkpoints
